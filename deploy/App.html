@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RelPlanningAKS</title>
+
+    <script type="text/javascript" src="/apps/2.1/sdk.js"></script>
+
+    <script type="text/javascript">
+        Rally.onReady(function () {
+                Ext.define("CustomApp",{extend:"Rally.app.App",componentCls:"app",launch:function(){console.log("Launch function is gestart!"),this.milestonesCombobox=this.add({xtype:"rallymilestonecombobox"}),this._loadData()},_loadData:function(){console.log("Function loadData is gestart")}});
+
+            Rally.launchApp('CustomApp', {
+                name:"RelPlanningAKS",
+                parentRepos:"",
+                version:"0.1.1"
+            });
+
+        });
+    </script>
+
+
+    <style type="text/css">
+        .app{margin:20px}
+    </style>
+</head>
+<body>
+</body>
+</html>
