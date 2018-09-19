@@ -7,7 +7,7 @@
 
     <script type="text/javascript">
         Rally.onReady(function () {
-                Ext.define("CustomApp",{extend:"Rally.app.App",componentCls:"app",launch:function(){console.log("Launch function is gestart!"),this.milestonesCombobox=this.add({xtype:"rallymilestonecombobox"}),this._loadData()},_loadData:function(){console.log("Function loadData is gestart")}});
+                Ext.define("CustomApp",{extend:"Rally.app.App",componentCls:"app",launch:function(){console.log("Launch function is gestart!"),this.milestonesCombobox=this.add({xtype:"rallymilestonecombobox"}),this._loadData()},_loadData:function(){console.log("Function loadData is gestart");Ext.create("Rally.data.wsapi.Store",{model:"User Story",autoLoad:!0,listeners:{load:function(o,t,a){console.log("Data ontvangen vanuit Rally",o,t,a),this._loadGrid(o)},scope:this},fetch:["FormattedID","Name","ScheduleState"]})},_loadGrid:function(o){var t=Ext.create("Rally.ui.grid.Grid",{store:o,columnCfgs:["Name"]});this.add(t),console.log("Grid toegevoegd?",this)}});
 
             Rally.launchApp('CustomApp', {
                 name:"RelPlanningAKS",
