@@ -2,7 +2,7 @@ RelPlanningAKS
 =========================
 
 ## Overview
-
+Release Planning AKS is een poging tot het tonen van een release planning voor AKS binnen Rally.
 
 ## License
 
